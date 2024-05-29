@@ -25,7 +25,7 @@ topMenuEl.classList.add("flex-around");
 // Menu data structure
 
 // adding menu buttons
-const menuLinks = [
+const menulinks = [
     { text: "about", href: "/about" },
     { text: "catalog", href: "/catalog" },
     { text: "orders", href: "/orders" },
@@ -72,7 +72,51 @@ const menuLinks = [
 // adjust height subMenu
   subMenuEl.style.height = "100%";
 
-
+// set the background color to the value stored (-----)
   subMenuEl.style.background = "let(--sub-menu-bg)";
 
-  
+// add flex-around to the subMenu element
+  subMenuEl.classList.add("flex-around");
+
+  // position to be set to absolute
+  subMenuEl.style.position = "absolute";
+
+// value of this element to be changed to 0
+  subMenuEl.style.top = "0";
+
+//
+
+
+  const menuLinks = [
+    { text: "about", href: "/about" },
+    {
+      text: "catalog",
+      href: "#",
+      subLinks: [
+        { text: "all", href: "/catalog/all" },
+        { text: "top selling", href: "/catalog/top" },
+        { text: "search", href: "/catalog/search" },
+      ],
+    },
+    {
+      text: "orders",
+      href: "#",
+      subLinks: [
+        { text: "new", href: "/orders/new" },
+        { text: "pending", href: "/orders/pending" },
+        { text: "history", href: "/orders/history" },
+      ],
+    },
+    {
+      text: "account",
+      href: "#",
+      subLinks: [
+        { text: "profile", href: "/account/profile" },
+        { text: "sign out", href: "/account/signout" },
+      ],
+    },
+  ];
+
+  const topMenuLinks = document.querySelectorAll("a");
+
+
