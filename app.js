@@ -84,9 +84,7 @@ const menulinks = [
 // value of this element to be changed to 0
   subMenuEl.style.top = "0";
 
-//
-
-
+  // restructuring
   const menuLinks = [
     { text: "about", href: "/about" },
     {
@@ -119,4 +117,54 @@ const menulinks = [
 
   const topMenuLinks = document.querySelectorAll("a");
 
+// designating a 'click' event listener
+topMenuEl.addEventListener("click", (event) => {});
+
+topMenuEl.addEventListener("click", (event) => {
+    event.preventDefault();
+  });
+
+
+ // should return if the element clicked was not an "a" element 
+  topMenuEl.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (event.target.tagName !== "A") {
+      return;
+    }
+  });
+
+  topMenuEl.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (event.target.tagName !== "A") {
+      return;
+    } else {
+      console.log(event.target);
+    }
+  });
+
+
+  // remove the "active" class using Element.classList.remove
+  topMenuEl.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (event.target.tagName !== "A") {
+      return;
+    } else {
+      //console.log(event.target);
+      topMenuLinks.forEach((a) => a.classList.remove("active"));
+    }
+  });
+
+  // toggle the active class on the clicked link
+  topMenuEl.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (event.target.tagName !== "A") {
+      return;
+    } else {
+      //console.log(event.target);
+      topMenuLinks.forEach((a) => a.classList.remove("active"));
+      event.target.classList.toggle("active");
+    }
+  });
+
+  
 
