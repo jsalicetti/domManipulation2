@@ -55,12 +55,9 @@
     transition: top 0.5s ease-out;
   }
   #sub-menu a:hover {
-    background-color: var(--top-menu-bg);
+    background-color: aqua
   }
-  nav a.active {
-    background-color: var(--sub-menu-bg);
-    color: var(--main-bg);
-  }
+
 
  
 

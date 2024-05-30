@@ -18,18 +18,41 @@ const topMenuEl = document.getElementById("top-menu");
 // adjust the height 
 topMenuEl.style.height = "100%";
 
-topMenuEl.style.background = "let(--top-menu-bg)";
+topMenuEl.style.background = "var(--top-menu-bg)";
 
 topMenuEl.classList.add("flex-around");
 
 // Menu data structure
 
 // adding menu buttons
-const menulinks = [
+const menuLinks = [
     { text: "about", href: "/about" },
-    { text: "catalog", href: "/catalog" },
-    { text: "orders", href: "/orders" },
-    { text: "account", href: "/account" },
+    {
+      text: "catalog",
+      href: "#",
+      subLinks: [
+        { text: "all", href: "/catalog/all" },
+        { text: "top selling", href: "/catalog/top" },
+        { text: "search", href: "/catalog/search" },
+      ],
+    },
+    {
+      text: "orders",
+      href: "#",
+      subLinks: [
+        { text: "new", href: "/orders/new" },
+        { text: "pending", href: "/orders/pending" },
+        { text: "history", href: "/orders/history" },
+      ],
+    },
+    {
+      text: "account",
+      href: "#",
+      subLinks: [
+        { text: "profile", href: "/account/profile" },
+        { text: "sign out", href: "/account/signout" },
+      ],
+    },
   ];
 
   // iterate over the entire menuLinks array
@@ -85,35 +108,7 @@ const menulinks = [
   subMenuEl.style.top = "0";
 
   // restructuring
-  const menuLinks = [
-    { text: "about", href: "/about" },
-    {
-      text: "catalog",
-      href: "#",
-      subLinks: [
-        { text: "all", href: "/catalog/all" },
-        { text: "top selling", href: "/catalog/top" },
-        { text: "search", href: "/catalog/search" },
-      ],
-    },
-    {
-      text: "orders",
-      href: "#",
-      subLinks: [
-        { text: "new", href: "/orders/new" },
-        { text: "pending", href: "/orders/pending" },
-        { text: "history", href: "/orders/history" },
-      ],
-    },
-    {
-      text: "account",
-      href: "#",
-      subLinks: [
-        { text: "profile", href: "/account/profile" },
-        { text: "sign out", href: "/account/signout" },
-      ],
-    },
-  ];
+
 
   const topMenuLinks = document.querySelectorAll("a");
 
@@ -166,5 +161,5 @@ topMenuEl.addEventListener("click", (event) => {
     }
   });
 
-  
+
 
